@@ -1,0 +1,53 @@
+/*
+ * @Descripttion: 
+ * @Author: chelsea.jiang
+ * @Date: 2021-01-26 13:55:00
+ * @LastEditors: chelsea.jiang
+ * @LastEditTime: 2021-01-26 20:24:40
+ */
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb",
+        "prettier"
+    ],
+    "plugins": [
+        "jsx-a11y",
+        "react",
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "prettier/prettier": ["error"],
+        "react/jsx-uses-react": "error", //防止react被错误地标记为未使用
+        "react/jsx-uses-vars": "error",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-key": 2, //在数组或迭代器中验证JSX具有key属性
+        "import/no-dynamic-require": 0,
+        "import/no-extraneous-dependencies": 0,
+        "import/no-named-as-default": 0,
+        "import/no-unresolved": 2,
+        "import/no-webpack-loader-syntax": 0,
+        "import/prefer-default-export": 0,
+        "arrow-body-style": [2, "as-needed"], // 箭头函数
+        "class-methods-use-this": 0, // 强制类方法使用 this
+        // 缩进Indent with 4 spaces
+        "indent": ["error", 4],
+        // Indent JSX with 4 spaces
+        "react/jsx-indent": ["error", 4],
+        // Indent props with 4 spaces
+        "react/jsx-indent-props": ["error", 4],
+        "no-console": 0, // 不禁用console
+        "no-debugger": 2 //禁用debugger
+    }
+}
