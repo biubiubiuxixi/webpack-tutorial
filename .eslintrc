@@ -3,13 +3,14 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-26 13:55:00
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-01-26 20:24:40
+ * @LastEditTime: 2021-01-28 18:09:06
  */
 {
     "parser": "babel-eslint",
     "extends": [
         "airbnb",
-        "prettier"
+        "prettier",
+        "prettier/react"
     ],
     "plugins": [
         "jsx-a11y",
@@ -25,7 +26,9 @@
     },
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "jest": true,
+        "es6": true
     },
     "rules": {
         "prettier/prettier": ["error"],
@@ -48,6 +51,14 @@
         // Indent props with 4 spaces
         "react/jsx-indent-props": ["error", 4],
         "no-console": 0, // 不禁用console
-        "no-debugger": 2 //禁用debugger
+        "no-debugger": 2, //禁用debugger
+        "react/jsx-props-no-spreading": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "webpack.config.js"
+            }
+        }
     }
 }

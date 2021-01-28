@@ -3,7 +3,7 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-12 14:34:59
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-01-27 10:30:25
+ * @LastEditTime: 2021-01-28 18:02:40
  */
 const webpack = require('webpack');
 const path = require('path');
@@ -12,14 +12,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        index: path.resolve(__dirname, 'app', 'index.js'),
+        index: path.resolve(__dirname, 'src', 'index.js'),
     },
     output: {
         path: path.resolve(__dirname, 'build'),
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'app', 'index.html'),
+            template: path.resolve(__dirname, 'src', 'index.html'),
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],
@@ -27,6 +27,12 @@ module.exports = {
         port: 10010,
         open: true,
         hot: true,
+    },
+    resolve: {
+        extensions: ['*', '.js', '.jsx', '.react.js'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+        },
     },
     module: {
         rules: [
@@ -57,9 +63,6 @@ module.exports = {
                 },
             },
         ],
-    },
-    resolve: {
-        extensions: ['*', '.js', '.jsx', '.react.js'],
     },
     optimization: {
         usedExports: true, // 使用查找的方式查看模块哪个使用了
