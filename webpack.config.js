@@ -3,7 +3,7 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-12 14:34:59
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-01-28 18:02:40
+ * @LastEditTime: 2021-01-29 15:53:35
  */
 const webpack = require('webpack');
 const path = require('path');
@@ -21,7 +21,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html'),
         }),
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin(), // 浏览器免刷新
     ],
     devServer: {
         port: 10010,

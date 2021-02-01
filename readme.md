@@ -3,13 +3,14 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-27 09:41:14
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-01-28 10:08:39
+ * @LastEditTime: 2021-01-28 21:01:11
 -->
 * webpack 5
 * React
 * eslint
 * prettier
 * React Router DOM
+* loadsh
 
 [Webpack 5的最完整指南](https://my.oschina.net/u/3913691/blog/4899111)
 
