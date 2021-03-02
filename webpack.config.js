@@ -3,7 +3,7 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-12 14:34:59
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-01-29 15:53:35
+ * @LastEditTime: 2021-03-02 10:38:07
  */
 const webpack = require('webpack');
 const path = require('path');
@@ -16,6 +16,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
+        publicPath: '/',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -27,6 +28,7 @@ module.exports = {
         port: 10010,
         open: true,
         hot: true,
+        historyApiFallback: true, // 解决所有的 404， 页面刷新报错问题 请求都会响应 index.html 的内容的问题
     },
     resolve: {
         extensions: ['*', '.js', '.jsx', '.react.js'],
