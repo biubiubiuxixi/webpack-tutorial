@@ -3,7 +3,7 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-27 09:41:14
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-03-02 14:40:45
+ * @LastEditTime: 2021-03-02 14:44:48
 -->
 * webpack 5
 * React
@@ -11,6 +11,7 @@
 * prettier
 * React Router DOM
 * loadsh
+* sass
 
 [Webpack 5的最完整指南](https://my.oschina.net/u/3913691/blog/4899111)
 
