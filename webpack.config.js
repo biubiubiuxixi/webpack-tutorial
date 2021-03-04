@@ -3,7 +3,7 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-12 14:34:59
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-03-02 10:38:07
+ * @LastEditTime: 2021-03-04 21:36:00
  */
 const webpack = require('webpack');
 const path = require('path');
@@ -28,6 +28,8 @@ module.exports = {
         port: 10010,
         open: true,
         hot: true,
+        host: '0.0.0.0',
+        useLocalIp: true, // 使浏览器可以使用的本地IP打开
         historyApiFallback: true, // 解决所有的 404， 页面刷新报错问题 请求都会响应 index.html 的内容的问题
     },
     resolve: {
