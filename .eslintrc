@@ -3,7 +3,7 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-26 13:55:00
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-01-28 18:09:06
+ * @LastEditTime: 2021-03-05 12:12:04
  */
 {
     "parser": "babel-eslint",
@@ -45,7 +45,7 @@
         "arrow-body-style": [2, "as-needed"], // 箭头函数
         "class-methods-use-this": 0, // 强制类方法使用 this
         // 缩进Indent with 4 spaces
-        "indent": ["error", 4],
+        "indent": ["error", 4, { "SwitchCase": 1 }], // SwitchCase冲突 闪烁问题
         // Indent JSX with 4 spaces
         "react/jsx-indent": ["error", 4],
         // Indent props with 4 spaces

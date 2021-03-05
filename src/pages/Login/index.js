@@ -3,13 +3,20 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-25 16:12:01
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-01-28 19:47:40
+ * @LastEditTime: 2021-03-05 14:52:16
  */
-import React from 'react';
+import { connect } from 'react-redux';
+import { loginUserTodo } from '@/redux/actions';
+import Login from './components';
 
-const Login = () => {
-    const a = 'Login';
-    return <div>这是 {a}</div>;
-};
+const mapStateToProps = (state) => ({
+    auth: state.loginReducer.auth,
+});
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+    loginIn: (data) => {
+        dispatch(loginUserTodo(data));
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

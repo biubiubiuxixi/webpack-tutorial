@@ -3,53 +3,20 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-25 16:12:01
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-03-04 21:18:48
+ * @LastEditTime: 2021-03-05 15:01:03
  */
-import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Switch, NavLink } from 'react-router-dom';
-import renderRoutes from '@/components/AuthorizeRoute/renderRoutes';
-import routes from '@/routes';
-import ScrollToTop from '@/components/ScrollToTop';
-import './styles/style.scss';
+import { connect } from 'react-redux';
+import { loginUserTodo } from '@/redux/actions';
+import App from './components';
 
-const authed = true; // 如果登陆之后可以利用redux修改该值 false 未登录
-const authPath = '/login'; // 默认未登录的时候返回的页面，可以自行设置
+const mapStateToProps = (state) => ({
+    auth: state.loginReducer.auth,
+});
 
-const App = () => (
-    <Router>
-        {/* 页面切换时，返回顶部 */}
-        <ScrollToTop />
-        <ul>
-            <ol>
-                <NavLink exact to="/" activeClassName="selected">
-                    Home
-                </NavLink>
-            </ol>
-            <ol>
-                <NavLink to="/about" activeClassName="selected">
-                    About
-                </NavLink>
-            </ol>
-            <ol>
-                <NavLink to="/users" activeClassName="selected">
-                    Users
-                </NavLink>
-            </ol>
-            <ol>
-                <NavLink to="/topics/one" activeClassName="selected">
-                    Topic
-                </NavLink>
-            </ol>
-            <ol>
-                <NavLink to="/topics" activeClassName="selected">
-                    Topics
-                </NavLink>
-            </ol>
-        </ul>
-        <Suspense fallback={<div>正在加载。。。</div>}>
-            <Switch>{renderRoutes(routes, authed, authPath)}</Switch>
-        </Suspense>
-    </Router>
-);
+const mapDispatchToProps = (dispatch) => ({
+    loginIn: (data) => {
+        dispatch(loginUserTodo(data));
+    },
+});
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
