@@ -3,7 +3,7 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-12 14:34:59
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-03-04 22:11:41
+ * @LastEditTime: 2021-03-15 17:08:51
  */
 const webpack = require('webpack');
 const path = require('path');
@@ -27,7 +27,7 @@ module.exports = {
     devServer: {
         port: 10010,
         open: true,
-        hot: true,
+        // hot: true,
         stats: {
             colors: true, // 输出不同的颜色
             preset: 'minimal',
@@ -55,7 +55,7 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader', 'eslint-loader'],
+                use: ['babel-loader'],
             },
             {
                 test: /\.(png|jpg|gif)$/,

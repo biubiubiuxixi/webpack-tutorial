@@ -3,7 +3,7 @@
  * @Author: chelsea.jiang
  * @Date: 2021-03-05 10:50:35
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-03-05 16:35:43
+ * @LastEditTime: 2021-03-12 13:48:47
  */
 import { SET_LOG_USER, SET_LOGOUT } from './actionTypes';
 
