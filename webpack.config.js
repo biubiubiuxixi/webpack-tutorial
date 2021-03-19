@@ -3,7 +3,7 @@
  * @Author: chelsea.jiang
  * @Date: 2021-01-12 14:34:59
  * @LastEditors: chelsea.jiang
- * @LastEditTime: 2021-03-15 17:08:51
+ * @LastEditTime: 2021-03-19 17:09:41
  */
 const webpack = require('webpack');
 const path = require('path');
@@ -55,7 +55,7 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader'],
+                use: ['babel-loader', 'eslint-loader'],
             },
             {
                 test: /\.(png|jpg|gif)$/,
